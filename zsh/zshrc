@@ -1,0 +1,12 @@
+export ZSH=$DOTFILES/zsh
+
+# Loading different zsh functions
+if [[ -d $ZSH/functions ]]; then
+    for func in $ZSH/functions/*(:t); echo $ZSH/functions/$func && autoload -U $ZSH/functions/$func
+fi
+
+# initialize autocomplete
+autoload -U compinit add-zsh-hook
+compinit
+
+alias vim="nvim"
