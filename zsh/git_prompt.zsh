@@ -1,4 +1,5 @@
 git_status() {
+
     dotfiles::is_git || return
 
     local git_branch="$vcs_info_msg_0_"
