@@ -5,6 +5,9 @@ source ~/.config/nvim/plugins.vim
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
 
+nnoremap j k
+nnoremap k j
+
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>

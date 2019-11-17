@@ -3,7 +3,9 @@ dotfiles::exists() {
 }
 
 dotfiles::is_git() {
-    [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) == true ]]
+  local IS_GIT=$(command git rev-parse --is-inside-work-tree 2> /dev/null)
+
+  [[ ! -z $IS_GIT ]]
 }
 
 dotfiles::bold() {

@@ -1,6 +1,17 @@
-source $ZSH/git_prompt.zsh
+autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats ' %b'
 
-export PROMPT="$(print $COLOR_YELLOW '>')$(print $COLOR_NONE ' ')"
+source $ZSH/git_prompt.zsh
+
+add-zsh-hook precmd vcs_info
+add-zsh-hook precmd prompt_git
+
+prompt_git() {
+  vcs_info
+  export RPROMPT="$(git_status)"
+}
+
+export PROMPT_SYMBOL="> "
+export PROMPT="%{$fg_bold[yellow]%}% $PROMPT_SYMBOL%{$reset_color%}"
