@@ -19,12 +19,12 @@ prepend_path $HOME/bin
 alias vim="nvim"
 alias ls="colorls"
 
-# setopt NO_BG_NICE
-# setopt NO_HUP
-# setopt NO_LIST_BEEP
-# setopt LOCAL_OPTIONS
-# setopt LOCAL_TRAPS
-# setopt PROMPT_SUBST
+setopt NO_BG_NICE
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS
+setopt LOCAL_TRAPS
+setopt PROMPT_SUBST
 
 # history
 HISTFILE=~/.zsh_history
