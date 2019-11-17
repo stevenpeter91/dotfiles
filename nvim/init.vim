@@ -429,3 +429,14 @@ set ttyfast
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
+
+" Toggle NERDTree
+function! ToggleNerdTree()
+    if @% != "" && @% !~ "Startify" && (!exists("g:NERDTree") || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
+        :NERDTreeFind
+    else
+        :NERDTreeToggle
+    endif
+endfunction
+" toggle nerd tree
+nmap <silent> <leader>k :call ToggleNerdTree()<cr>
