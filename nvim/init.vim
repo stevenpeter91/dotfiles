@@ -419,6 +419,12 @@ set backupdir=~/.local/share/nvim/backup " Don't put backups in current dir
 set backup
 set noswapfile
 
+" Wrap Lines
+set wrap
+
+" Faster drawing
+set ttyfast
+
 " Reload icons after init source
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
