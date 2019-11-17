@@ -1,5 +1,5 @@
 dotfiles::exists() {
-    command -v "$1" > /dev/null 2>&1
+  command -v "$1" > /dev/null 2>&1
 }
 
 dotfiles::is_git() {
@@ -9,17 +9,17 @@ dotfiles::is_git() {
 }
 
 dotfiles::bold() {
-    echo -n "%B$1%b"
+  echo -n "%B$1%b"
 }
 
 dotfiles::print() {
-    local color content bold
-    [[ -n "$1" ]] && color="%F{$1}" || color="%f"
-    [[ -n "$2" ]] && content="$2" || content=""
+  local color content bold
+  [[ -n "$1" ]] && color="%F{$1}" || color="%f"
+  [[ -n "$2" ]] && content="$2" || content=""
 
-    [[ -z "$2" ]] && content="$1"
+  [[ -z "$2" ]] && content="$1"
 
-    echo -n "$color"
-    echo -n "$content"
-    echo -n "%{%b%f%}"
+  echo -n "$color"
+  echo -n "$content"
+  echo -n "%{%b%f%}"
 }
