@@ -9,11 +9,7 @@ nnoremap j k
 nnoremap k j
 
 set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
-
-set smarttab
-set expandtab
-set softtabstop=4
-set shiftwidth=4
+set autoindent noexpandtab tabstop=4 shiftwidth=4
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
