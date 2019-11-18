@@ -92,7 +92,7 @@ if [ "$(uname)" == "Darwin" ]; then
   defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
   echo "Disable the “reopen windows when logging back in” option"
-  This works, although the checkbox will still appear to be checked.
+  # This works, although the checkbox will still appear to be checked.
   defaults write com.apple.loginwindow TALLogoutSavesState -bool false
   defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
