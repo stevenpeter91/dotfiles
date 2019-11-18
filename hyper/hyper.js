@@ -152,7 +152,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hypercwd",
     "hyper-search",
     "hyper-highlight-active-pane",
     "hyper-savetext",
