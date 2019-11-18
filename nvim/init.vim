@@ -8,6 +8,9 @@ source ~/.config/nvim/plugins.vim
 nnoremap j k
 nnoremap k j
 
+set list
+set listchars=tab:>-
+
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>

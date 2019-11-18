@@ -22,7 +22,7 @@ echo "$PACKAGE_MANAGER is the package manager"
 
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
-$PACKAGE_MANAGER install neovim ruby gcc watch $ADDITIONAL_PACKAGES
+$PACKAGE_MANAGER install rg neovim ruby gcc watch $ADDITIONAL_PACKAGES
 sudo gem install colorls compass sass
 
 if [[ -z $(which fzf) ]]; then
