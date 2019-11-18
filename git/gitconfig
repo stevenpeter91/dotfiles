@@ -2,5 +2,5 @@
 	name = Steven Peter
 	email = 526473+gb96@users.noreply.github.com
 [core]
-	filemode = false
-	autocrlf = true
+#	filemode = false
+#	autocrlf = true
