@@ -8,9 +8,17 @@ rm -f ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/
 mkdir -p ~/.local/share/nvim/backup/
 mkdir -p ~/.fonts/truetype/
 
+export PACKAGE_MANAGER="sudo apt-get"
+
+if [ "$(uname)" == "Darwin" ]; then
+  export PACKAGE_MANAGER="brew";
+fi;
+
+echo "$PACKAGE_MANAGER is the package manager"
+
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
-sudo apt-get install gem neovim ruby ruby-dev gcc
+$PACKAGE_MANAGER install gem neovim ruby ruby-dev gcc
 sudo gem install colorls
 
 if [[ -z $(which fzf) ]]; then
