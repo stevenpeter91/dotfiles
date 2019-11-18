@@ -67,6 +67,15 @@ if [ "$(uname)" == "Darwin" ]; then
   echo "Enable snap-to-grid for desktop icons"
   /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
+  # Show the full URL in the address bar (note: this still hides the scheme)
+  defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+
+  # Set Safari’s home page to `about:blank` for faster loading
+  defaults write com.apple.Safari HomePage -string "about:blank"
+
+  # Hide Safari’s bookmarks bar by default
+  defaults write com.apple.Safari ShowFavoritesBar -bool false
+
   echo "Enable Safari’s debug menu"
   defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
@@ -86,6 +95,33 @@ if [ "$(uname)" == "Darwin" ]; then
   This works, although the checkbox will still appear to be checked.
   defaults write com.apple.loginwindow TALLogoutSavesState -bool false
   defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+
+  echo "System audio volume"
+  sudo nvram SystemAudioVolume=" "
+
+  defaults write com.apple.spotlight orderedItems -array \
+	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 1;"name" = "PDF";}' \
+	'{"enabled" = 1;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+	'{"enabled" = 0;"name" = "MESSAGES";}' \
+	'{"enabled" = 0;"name" = "CONTACT";}' \
+	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+	'{"enabled" = 0;"name" = "IMAGES";}' \
+	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+	'{"enabled" = 0;"name" = "MUSIC";}' \
+	'{"enabled" = 0;"name" = "MOVIES";}' \
+	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+	'{"enabled" = 0;"name" = "SOURCE";}' \
+	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
+	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 fi;
 
 ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
@@ -109,3 +145,4 @@ if [[ $os == "#1-Microsoft" ]]; then
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
 
+nvim +PlugInstall +qall
