@@ -8,8 +8,12 @@ source ~/.config/nvim/plugins.vim
 nnoremap j k
 nnoremap k j
 
-set list
-set listchars=tab:>-
+set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
+
+set smarttab
+set expandtab
+set softtabstop=4
+set shiftwidth=4
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -40,6 +44,8 @@ set softtabstop=2
 
 " Indentation amount for < and > commands.
 set shiftwidth=2
+
+let g:prettier#config#use_tabs = 'true'
 
 " do not wrap long lines by default
 set nowrap
