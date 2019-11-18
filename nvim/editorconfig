@@ -7,4 +7,4 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
-ident_style = tab
+indent_style = tab
