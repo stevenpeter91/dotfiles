@@ -5,6 +5,9 @@
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "prettier.useTabs": true,
+  "prettier.singleQuote": true,
+  "prettier.formatterPriority": -1
 }
 

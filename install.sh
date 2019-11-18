@@ -3,7 +3,7 @@
 export DOTFILES=~/.dotfiles
 export SRC_DIR=$DOTFILES
 
-rm -f ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls
+rm -f ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls
 
 mkdir -p ~/.local/share/nvim/backup/
 mkdir -p ~/.fonts/truetype/

@@ -9,7 +9,7 @@ nnoremap j k
 nnoremap k j
 
 set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
-set autoindent noexpandtab tabstop=4 shiftwidth=4
+set smartindent noexpandtab tabstop=2 shiftwidth=2
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -30,8 +30,6 @@ set clipboard=unnamed
 
 " Hides buffers instead of closing them
 set hidden
-
-let g:prettier#config#use_tabs = 'true'
 
 " do not wrap long lines by default
 set nowrap
