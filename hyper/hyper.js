@@ -4,6 +4,8 @@
 
 module.exports = {
   config: {
+    // shell
+    shell: "zsh",
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
@@ -13,7 +15,7 @@ module.exports = {
 
     // font family with optional fallbacks
     fontFamily:
-      '"Hack Nerd Font", "Source Code Pro for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      '"Source Code Pro Nerd Font Complete Mono", "Hack Nerd Font", "Source Code Pro for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
