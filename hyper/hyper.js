@@ -5,7 +5,7 @@
 module.exports = {
   config: {
     // shell
-    shell: "zsh",
+    shell: "C:\\Windows\\System32\\bash.exe -c zsh",
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",

@@ -1,6 +1,7 @@
 export ZSH=$DOTFILES/zsh
 
 source $ZSH/colors.zsh
+source $ZSH/fzf.zsh
 
 # Loading different zsh functions
 if [[ -d $ZSH/functions ]]; then
