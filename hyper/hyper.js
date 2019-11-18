@@ -4,8 +4,6 @@
 
 module.exports = {
   config: {
-    // shell
-    shell: "C:\\Windows\\System32\\bash.exe -c zsh",
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
@@ -106,11 +104,11 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: "",
+    shell: "C:\\Windows\\System32\\bash.exe",
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ["--login"],
+    shellArgs: ["-c", "cd ~ && exec zsh"],
 
     // for environment variables
     env: {},
