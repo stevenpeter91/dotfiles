@@ -134,6 +134,7 @@ ln -s $SRC_DIR/git/gitconfig ~/.gitconfig
 ln -s $SRC_DIR/tmux/tmux.conf ~/.tmux.conf
 
 ln -s $SRC_DIR/nvim ~/.config/nvim
+ln -s $SRC_DIR/nvim/editorconfig ~/.editorconfig
 ln -s $SRC_DIR/colorls ~/.config/colorls
 
 fc-cache -fv ~/.fonts

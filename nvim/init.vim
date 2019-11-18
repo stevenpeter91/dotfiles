@@ -31,16 +31,6 @@ set clipboard=unnamed
 " Hides buffers instead of closing them
 set hidden
 
-" === TAB/Space settings === "
-" Insert spaces when TAB is pressed.
-set expandtab
-
-" Change number of spaces that a <Tab> counts for during editing ops
-set softtabstop=2
-
-" Indentation amount for < and > commands.
-set shiftwidth=2
-
 let g:prettier#config#use_tabs = 'true'
 
 " do not wrap long lines by default
