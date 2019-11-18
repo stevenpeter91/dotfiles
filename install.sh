@@ -23,11 +23,69 @@ echo "$PACKAGE_MANAGER is the package manager"
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
 $PACKAGE_MANAGER install neovim ruby gcc watch $ADDITIONAL_PACKAGES
-sudo gem install colorls
+sudo gem install colorls compass sass
 
 if [[ -z $(which fzf) ]]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
+fi;
+
+if [ "$(uname)" == "Darwin" ]; then
+  mas install 866773894   # Quiver
+  mas install 1432731683  # AdBlock Plus
+
+  echo "All Extensions"
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  echo "Expand save dialog by default"
+  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+  echo "Show Library folder by default"
+  chflags nohidden ~/Library
+
+  echo "Show battery percentage"
+  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+  echo "Use current directory as default search scope in Finder"
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+  echo "Show Path bar in Finder"
+  defaults write com.apple.finder ShowPathbar -bool true
+
+  echo "Show Status bar in Finder"
+  defaults write com.apple.finder ShowStatusBar -bool true
+
+  echo "Disable the “Are you sure you want to open this application?” dialog"
+  defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+  echo "Display full POSIX path as Finder window title"
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  echo "Show item info below desktop icons"
+  /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
+
+  echo "Enable snap-to-grid for desktop icons"
+  /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+  echo "Enable Safari’s debug menu"
+  defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+  echo "Add a context menu item for showing the Web Inspector in web views"
+  defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+  echo "Disable the Ping sidebar in iTunes"
+  defaults write com.apple.iTunes disablePingSidebar -bool true
+
+  echo "Disable all the other Ping stuff in iTunes"
+  defaults write com.apple.iTunes disablePing -bool true
+
+  echo "Make ⌘ + F focus the search input in iTunes"
+  defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
+
+  echo "Disable the “reopen windows when logging back in” option"
+  This works, although the checkbox will still appear to be checked.
+  defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+  defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 fi;
 
 ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
