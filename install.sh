@@ -13,7 +13,7 @@ export ADDITIONAL_PACKAGES=""
 
 if [ "$(uname)" == "Darwin" ]; then
   export PACKAGE_MANAGER="brew";
-  export ADDITIONAL_PACKAGES="mas"
+  export ADDITIONAL_PACKAGES="mas rg"
 else
   export ADDITIONAL_PACKAGES="gem ruby-dev"
 fi;
@@ -22,7 +22,7 @@ echo "$PACKAGE_MANAGER is the package manager"
 
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
-$PACKAGE_MANAGER install rg neovim ruby gcc watch $ADDITIONAL_PACKAGES
+$PACKAGE_MANAGER install neovim ruby gcc watch $ADDITIONAL_PACKAGES
 sudo gem install colorls compass sass
 
 if [[ -z $(which fzf) ]]; then
@@ -143,6 +143,10 @@ os=$(uname -a | awk '{ print $4 }')
 
 if [[ $os == "#1-Microsoft" ]]; then
   echo "Windows detected"
+	if [[ -z $(which rg 2> /dev/null) ]]; then
+		curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb && sudo dpkg -i ripgrep_11.0.2_amd64.deb
+		rm -f ripgrep_11.0.2_amd64.deb
+	fi;
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
 
