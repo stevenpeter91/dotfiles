@@ -11,7 +11,7 @@ add-zsh-hook precmd prompt_git
 
 prompt_git() {
   vcs_info
-  export RPROMPT="$(git_status)"
+#  export RPROMPT="$(git_status)"
 }
 
 export PROMPT_SYMBOL="> "
