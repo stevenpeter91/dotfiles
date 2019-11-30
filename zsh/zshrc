@@ -1,12 +1,13 @@
 export ZSH=$DOTFILES/zsh
 
 source $ZSH/colors.zsh
-source $ZSH/fzf.zsh
 
 # Loading different zsh functions
 if [[ -d $ZSH/functions ]]; then
     for func in $ZSH/functions/*(:t); autoload -U $ZSH/functions/$func
 fi
+
+source $ZSH/fzf.zsh
 
 # initialize autocomplete
 autoload -U compinit && compinit
