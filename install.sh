@@ -3,7 +3,7 @@
 export DOTFILES=~/.dotfiles
 export SRC_DIR=$DOTFILES
 
-rm -f ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls
+rm -rf ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls ~/.config/rofi
 
 mkdir -p ~/.local/share/nvim/backup/
 mkdir -p ~/.fonts/truetype/
@@ -15,7 +15,7 @@ if [ "$(uname)" == "Darwin" ]; then
   export PACKAGE_MANAGER="brew";
   export ADDITIONAL_PACKAGES="mas rg"
 else
-  export ADDITIONAL_PACKAGES="gem ruby-dev"
+  export ADDITIONAL_PACKAGES="gem ruby-dev rofi"
 fi;
 
 echo "$PACKAGE_MANAGER is the package manager"
@@ -137,6 +137,7 @@ ln -s $SRC_DIR/tmux/tmux.conf ~/.tmux.conf
 ln -s $SRC_DIR/nvim ~/.config/nvim
 ln -s $SRC_DIR/nvim/editorconfig ~/.editorconfig
 ln -s $SRC_DIR/colorls ~/.config/colorls
+ln -s $SRC_DIR/rofi ~/.config/rofi
 
 fc-cache -fv ~/.fonts
 
