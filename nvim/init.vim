@@ -11,6 +11,9 @@ nnoremap k j
 set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
 set smartindent noexpandtab tabstop=2 shiftwidth=2
 
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>

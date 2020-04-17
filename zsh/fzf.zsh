@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/speter/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}~/.fzf/bin"
+if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
+  prepend_path $HOME/.fzf/bin
 fi
 
 # Auto-completion
