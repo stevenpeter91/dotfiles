@@ -23,8 +23,8 @@ echo "$PACKAGE_MANAGER is the package manager"
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
 $PACKAGE_MANAGER install neovim ruby gcc watch ftp npm $ADDITIONAL_PACKAGES
-sudo gem install colorls compass sass
-npm install -g typescript
+sudo gem install colorls compass sass neovim
+sudo npm install -g typescript
 
 if [[ -z $(which fzf) ]]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
