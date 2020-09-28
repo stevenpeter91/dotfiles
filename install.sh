@@ -38,6 +38,11 @@ fi;
 if [ "$(uname)" == "Darwin" ]; then
   # mas install 866773894   # Quiver
   mas install 1432731683  # AdBlock Plus
+  mas install 1147396723  # WhatsApp Desktop
+  mas install 411643860   # DaisyDisk
+  mas install 1026349850  # Copied
+  mas install 1173932628  # Drop - Color Picker
+  mas install 1033480833  # Decompresssor
 
   echo "All Extensions"
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -107,9 +112,9 @@ if [ "$(uname)" == "Darwin" ]; then
   defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-	'{"enabled" = 1;"name" = "PDF";}' \
-	'{"enabled" = 1;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 0;"name" = "PDF";}' \
+	'{"enabled" = 0;"name" = "FONTS";}' \
 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
 	'{"enabled" = 0;"name" = "MESSAGES";}' \
 	'{"enabled" = 0;"name" = "CONTACT";}' \
@@ -128,6 +133,12 @@ if [ "$(uname)" == "Darwin" ]; then
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 fi;
+
+echo "Enable spotlight"
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+
+echo "Start indexing of spotlight"
+sudo mdutil -E /
 
 rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
 rm -rf ~/.zshenv && ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
