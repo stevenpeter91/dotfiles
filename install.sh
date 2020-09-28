@@ -12,6 +12,8 @@ export PACKAGE_MANAGER="sudo apt-get -y"
 export ADDITIONAL_PACKAGES=""
 
 if [ "$(uname)" == "Darwin" ]; then
+  brew tap homebrew/cask-fonts
+  brew cask install font-fira-code font-hack-nerd-font
   export PACKAGE_MANAGER="brew";
   export ADDITIONAL_PACKAGES="mas rg"
 else
@@ -24,7 +26,7 @@ cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
 $PACKAGE_MANAGER update
 $PACKAGE_MANAGER upgrade
-$PACKAGE_MANAGER install neovim ruby gcc watch ftp npm $ADDITIONAL_PACKAGES
+$PACKAGE_MANAGER install neovim ruby gcc watch npm $ADDITIONAL_PACKAGES
 sudo gem install colorls compass sass neovim
 sudo npm install -g typescript yarn eslint
 
@@ -34,7 +36,7 @@ if [[ -z $(which fzf) ]]; then
 fi;
 
 if [ "$(uname)" == "Darwin" ]; then
-  mas install 866773894   # Quiver
+  # mas install 866773894   # Quiver
   mas install 1432731683  # AdBlock Plus
 
   echo "All Extensions"
@@ -127,21 +129,19 @@ if [ "$(uname)" == "Darwin" ]; then
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 fi;
 
-ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
-ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
+rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
+rm -rf ~/.zshenv && ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
 
-ln -s $SRC_DIR/hyper/hyper.js ~/.hyper.js
+rm -rf ~/.hyper.js && ln -s $SRC_DIR/hyper/hyper.js ~/.hyper.js
 
-ln -s $SRC_DIR/git/gitconfig ~/.gitconfig
+rm -rf ~/.gitconfig && ln -s $SRC_DIR/git/gitconfig ~/.gitconfig
 
-ln -s $SRC_DIR/tmux/tmux.conf ~/.tmux.conf
+rm -rf ~/.tmux.conf && ln -s $SRC_DIR/tmux/tmux.conf ~/.tmux.conf
 
-ln -s $SRC_DIR/nvim ~/.config/nvim
-ln -s $SRC_DIR/nvim/editorconfig ~/.editorconfig
-ln -s $SRC_DIR/colorls ~/.config/colorls
-ln -s $SRC_DIR/rofi ~/.config/rofi
-
-fc-cache -fv ~/.fonts
+rm -rf ~/.config/nvim && ln -s $SRC_DIR/nvim ~/.config/nvim
+rm -rf ~/.editorconfig && ln -s $SRC_DIR/nvim/editorconfig ~/.editorconfig
+rm -rf ~/.config/colorls && ln -s $SRC_DIR/colorls ~/.config/colorls
+rm -rf ~/.config/rofi && ln -s $SRC_DIR/rofi ~/.config/rofi
 
 os=$(uname -a | awk '{ print $4 }')
 
