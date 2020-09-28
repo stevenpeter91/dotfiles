@@ -28,7 +28,7 @@ $PACKAGE_MANAGER update
 $PACKAGE_MANAGER upgrade
 $PACKAGE_MANAGER install neovim ruby gcc watch npm $ADDITIONAL_PACKAGES
 sudo gem install colorls compass sass neovim
-sudo npm install -g typescript yarn eslint
+sudo npm install -g typescript yarn eslint tslint
 
 if [[ -z $(which fzf) ]]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
