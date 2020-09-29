@@ -26,7 +26,7 @@ cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
 $PACKAGE_MANAGER update
 $PACKAGE_MANAGER upgrade
-$PACKAGE_MANAGER install neovim ruby gcc watch npm $ADDITIONAL_PACKAGES
+$PACKAGE_MANAGER install tmux neovim ruby gcc watch npm composer $ADDITIONAL_PACKAGES
 sudo gem install colorls compass sass neovim
 sudo npm install -g typescript yarn eslint tslint
 
