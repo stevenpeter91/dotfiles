@@ -26,9 +26,9 @@ cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
 
 $PACKAGE_MANAGER update
 $PACKAGE_MANAGER upgrade
-$PACKAGE_MANAGER install tmux neovim ruby gcc watch npm composer $ADDITIONAL_PACKAGES
-sudo gem install colorls compass sass neovim
-sudo npm install -g typescript yarn eslint tslint
+$PACKAGE_MANAGER install tmux neovim ruby gcc watch npm composer curl $ADDITIONAL_PACKAGES
+sudo gem install colorls neovim
+sudo npm install -g typescript yarn eslint sass compass
 
 if [[ -z $(which fzf) ]]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -36,6 +36,7 @@ if [[ -z $(which fzf) ]]; then
 fi;
 
 if [ "$(uname)" == "Darwin" ]; then
+  echo "Doing MAC Stuff"
   # mas install 866773894   # Quiver
   mas install 1432731683  # AdBlock Plus
   mas install 1147396723  # WhatsApp Desktop
@@ -132,13 +133,13 @@ if [ "$(uname)" == "Darwin" ]; then
 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
+  echo "Enable spotlight"
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+
+  echo "Start indexing of spotlight"
+  sudo mdutil -E /
 fi;
-
-echo "Enable spotlight"
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-
-echo "Start indexing of spotlight"
-sudo mdutil -E /
 
 rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
 rm -rf ~/.zshenv && ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
@@ -164,5 +165,10 @@ if [[ $os == "#1-Microsoft" ]]; then
 	fi;
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
+
+if [[ ! -f ${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim ]]; then
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fi
 
 nvim +PlugInstall +qall
