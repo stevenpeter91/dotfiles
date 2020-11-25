@@ -8,32 +8,7 @@ rm -rf ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig 
 mkdir -p ~/.local/share/nvim/backup/
 mkdir -p ~/.fonts/truetype/
 
-export PACKAGE_MANAGER="sudo apt-get -y"
-export ADDITIONAL_PACKAGES=""
-
-if [ "$(uname)" == "Darwin" ]; then
-  brew tap homebrew/cask-fonts
-  brew cask install font-fira-code font-hack-nerd-font
-  export PACKAGE_MANAGER="brew";
-  export ADDITIONAL_PACKAGES="mas rg"
-else
-  export ADDITIONAL_PACKAGES="gem ruby-dev rofi"
-fi;
-
-echo "$PACKAGE_MANAGER is the package manager"
-
 cp $SRC_DIR/fonts/*.ttf ~/.fonts/truetype/
-
-$PACKAGE_MANAGER update
-$PACKAGE_MANAGER upgrade
-$PACKAGE_MANAGER install tmux neovim ruby gcc watch npm composer curl $ADDITIONAL_PACKAGES
-sudo gem install colorls neovim
-sudo npm install -g typescript yarn eslint sass compass
-
-if [[ -z $(which fzf) ]]; then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-fi;
 
 if [ "$(uname)" == "Darwin" ]; then
   echo "Doing MAC Stuff"
@@ -165,10 +140,3 @@ if [[ $os == "#1-Microsoft" ]]; then
 	fi;
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
-
-if [[ ! -f ${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim ]]; then
-  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-fi
-
-nvim +PlugInstall +qall
