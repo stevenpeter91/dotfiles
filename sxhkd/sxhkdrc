@@ -1,0 +1,3 @@
+## Show application launcher
+super + Space
+	rofi -show run
