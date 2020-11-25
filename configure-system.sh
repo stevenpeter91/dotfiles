@@ -3,7 +3,7 @@
 export DOTFILES=~/.dotfiles
 export SRC_DIR=$DOTFILES
 
-rm -rf ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls ~/.config/rofi
+# rm -rf ~/.editorconfig ~/.zshrc ~/.zshenv ~/.hyper.js ~/.tmux.conf ~/.gitconfig ~/.config/nvim ~/.config/colorls ~/.config/rofi
 
 mkdir -p ~/.local/share/nvim/backup/
 mkdir -p ~/.fonts/truetype/
@@ -129,6 +129,8 @@ rm -rf ~/.config/nvim && ln -s $SRC_DIR/nvim ~/.config/nvim
 rm -rf ~/.editorconfig && ln -s $SRC_DIR/nvim/editorconfig ~/.editorconfig
 rm -rf ~/.config/colorls && ln -s $SRC_DIR/colorls ~/.config/colorls
 rm -rf ~/.config/rofi && ln -s $SRC_DIR/rofi ~/.config/rofi
+rm -rf ~/.config/bspwm && ln -s $SRC_DIR/bspwm ~/.config/bspwm
+rm -rf ~/.config/sxhkd && ln -s $SRC_DIR/sxhkd ~/.config/sxhkd
 
 os=$(uname -a | awk '{ print $4 }')
 
