@@ -142,3 +142,5 @@ if [[ $os == "#1-Microsoft" ]]; then
 	fi;
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
+
+source ~/.zshrc
