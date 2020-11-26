@@ -131,6 +131,8 @@ rm -rf ~/.config/colorls && ln -s $SRC_DIR/colorls ~/.config/colorls
 rm -rf ~/.config/rofi && ln -s $SRC_DIR/rofi ~/.config/rofi
 rm -rf ~/.config/bspwm && ln -s $SRC_DIR/bspwm ~/.config/bspwm
 rm -rf ~/.config/sxhkd && ln -s $SRC_DIR/sxhkd ~/.config/sxhkd
+rm -rf ~/.config/polybar && ln -s $SRC_DIR/polybar ~/.config/polybar
+rm -rf ~/.colors && ln -s $SRC_DIR/colors ~/.colors
 
 os=$(uname -a | awk '{ print $4 }')
 
@@ -143,4 +145,4 @@ if [[ $os == "#1-Microsoft" ]]; then
   cp $SRC_DIR/hyper/hyper.js /mnt/c/Users/SPeter/AppData/Roaming/Hyper/.hyper.js
 fi;
 
-source ~/.zshrc
+# source ~/.zshrc

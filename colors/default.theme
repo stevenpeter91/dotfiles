@@ -1,0 +1,9 @@
+! special
+*.foreground      : #efefef
+*.background      : #616161
+*.focused         : #8bc34a
+*.active          : #80cbc4
+*.feedback        : #ffe0b2
+
+! images
+*.background_image: ~/.dotfiles/wallpaper/mug.jpg
