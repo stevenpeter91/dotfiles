@@ -1,0 +1,45 @@
+[colors]
+background = ${xrdb:background:#000000}
+foreground = ${xrdb:foreground:#ffffff}
+focused    = ${xrdb:focused:#0a6cf5}
+feedback   = ${xrdb:feedback:#66ffffff}
+
+[bar/top]
+width               = 100%
+height              = 24
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+module-margin-left  = 1
+module-margin-right = 2
+modules-left        = bspwm
+modules-right       = wired-network date
+padding-left        = 2
+padding-right       = 5
+line-size           = 1
+
+[module/bspwm]
+type                       = internal/bspwm
+enable-click               = true
+;label-focused-underline   = ${colors.focused}
+label-focused-foreground   = ${colors.focused}
+label-separator            = |
+label-separator-padding    = 0.5
+label-separator-foreground = ${bar/top.background}
+
+[module/date]
+type                     = internal/date
+interval                 = 1
+date                     = %d.%m.%Y
+time                     = %H:%M:%S
+label                    = %date% %time%
+format-prefix-foreground = ${colors.foreground}
+format-underline         = ${colors.focused}
+
+[module/wired-network]
+type                          = internal/network
+interface                     = eth0
+interval                      = 1
+label-connected               = up
+label-connected-foreground    = ${colors.focused}
+label-disconnected            = down
+label-disconnected-foreground = ${colors.feedback}
