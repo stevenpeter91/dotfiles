@@ -5,6 +5,8 @@ focused    = ${xrdb:focused:#0a6cf5}
 feedback   = ${xrdb:feedback:#66ffffff}
 
 [bar/top]
+font-0              = "SauceCodePro Nerd Font:pixelsize=12;0"
+font-1              = "FontAwesome:pixelsize=12;0"
 width               = 100%
 height              = 24
 background          = ${colors.background}
@@ -16,11 +18,12 @@ modules-right       = wired-network date
 padding-left        = 2
 padding-right       = 5
 line-size           = 1
+wm-restack          = bspwm
 
 [module/bspwm]
 type                       = internal/bspwm
 enable-click               = true
-;label-focused-underline   = ${colors.focused}
+label-focused-underline    = ${colors.focused}
 label-focused-foreground   = ${colors.focused}
 label-separator            = |
 label-separator-padding    = 0.5

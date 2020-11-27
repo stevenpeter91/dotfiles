@@ -1,0 +1,16 @@
+[global_config]
+	borderless          = True
+	smart_copy          = True
+	putty_paste_style   = True
+
+[profiles]
+	[[default]]
+		font                = SauceCodePro Nerd Font 8
+		background_type     = Transparent
+		show_titlebar       = False
+		scrollback_infinite = True
+		copy_on_selection   = True
+		scrollbar_position  = disabled
+		use_system_font     = False
+		background_color    = "#313131"
+		foreground_color    = "#EFEFEF"

@@ -132,6 +132,7 @@ rm -rf ~/.config/rofi && ln -s $SRC_DIR/rofi ~/.config/rofi
 rm -rf ~/.config/bspwm && ln -s $SRC_DIR/bspwm ~/.config/bspwm
 rm -rf ~/.config/sxhkd && ln -s $SRC_DIR/sxhkd ~/.config/sxhkd
 rm -rf ~/.config/polybar && ln -s $SRC_DIR/polybar ~/.config/polybar
+rm -rf ~/.config/terminator && ln -s $SRC_DIR/terminator ~/.config/terminator
 rm -rf ~/.colors && ln -s $SRC_DIR/colors ~/.colors
 
 os=$(uname -a | awk '{ print $4 }')
