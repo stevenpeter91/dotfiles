@@ -1,6 +1,7 @@
 [global_config]
   borderless = True
   tab_position = left
+  putty_paste_style   = True
 [keybindings]
 [profiles]
   [[default]]
