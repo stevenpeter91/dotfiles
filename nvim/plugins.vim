@@ -34,6 +34,9 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'neoclide/coc.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Vala Syntax highlighting
+Plug 'arrufat/vala.vim' 
+
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'
 
