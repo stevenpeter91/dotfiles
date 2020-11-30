@@ -65,3 +65,7 @@ zstyle ':completion:*' completer _expand _complete _files _correct _approximate
 source $ZSH/utils.zsh
 source $ZSH/prompt.zsh
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/speter/.sdkman"
+[[ -s "/home/speter/.sdkman/bin/sdkman-init.sh" ]] && source "/home/speter/.sdkman/bin/sdkman-init.sh"
