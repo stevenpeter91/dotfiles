@@ -3,9 +3,12 @@ export fontpath="${XDG_DATA_HOME:-$HOME/.local/share}"/fonts
 
 source $ZSH/colors.zsh
 
+export FUNCTIONS_PATH=$ZSH/functions
+export FPATH=$FUNCTIONS_PATH:$FPATH
+
 # Loading different zsh functions
-if [[ -d $ZSH/functions ]]; then
-    for func in $ZSH/functions/*(:t); autoload -U $ZSH/functions/$func
+if [[ -d $FUNCTIONS_PATH ]]; then
+    for func in $FUNCTIONS_PATH/*(:t); autoload -Uz $func
 fi
 
 [[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
