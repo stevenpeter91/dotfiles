@@ -9,7 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then
   export PACKAGE_MANAGER="brew";
   export ADDITIONAL_PACKAGES="mas rg"
 else
-  export ADDITIONAL_PACKAGES="gem ruby-dev rofi ao ripgrep tig"
+  export ADDITIONAL_PACKAGES="gem ruby-dev rofi ripgrep tig"
 fi;
 
 echo "$PACKAGE_MANAGER is the package manager"
