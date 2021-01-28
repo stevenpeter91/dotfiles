@@ -42,7 +42,7 @@ format-underline         = ${colors.focused}
 
 [module/wired-network]
 type                          = internal/network
-interface                     = eth0
+interface                     = wlan0
 interval                      = 1
 label-connected               = %{T1}%{T-}
 label-connected-foreground    = ${colors.focused}

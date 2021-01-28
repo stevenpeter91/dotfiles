@@ -119,7 +119,8 @@ fi;
 rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
 rm -rf ~/.zshenv && ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
 
-rm -rf ~/.hyper.js && ln -s $SRC_DIR/hyper/hyper.js ~/.hyper.js
+mkdir -p ~/.config/yyper/
+rm -rf ~/.config/hyper/.hyper.js && ln -s $SRC_DIR/hyper/hyper.js ~/.config/hyper/.hyper.js
 
 rm -rf ~/.gitconfig && ln -s $SRC_DIR/git/gitconfig ~/.gitconfig
 

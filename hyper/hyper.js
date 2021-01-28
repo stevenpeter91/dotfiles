@@ -47,7 +47,7 @@ module.exports = {
 
 		// terminal background color
 		// opacity is only supported on macOS
-		backgroundColor: "#232628",
+		backgroundColor: "#131618",
 
 		// terminal selection color
 		selectionColor: "#f2e35a",
