@@ -1,6 +1,23 @@
 [user]
 	name = Steven Peter
 	email = 526473+gb96@users.noreply.github.com
+[alias]
+	actualize = !git fetch -p origin
+	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
+	cleanup = !git clean -fdx
+	create = checkout -b
+	createfrom = !sh -c 'git actualize && git checkout -t $1'
+	rebasemaster = !git actualize && git rebase -i --no-autosquash origin/master
+	finish = !CURRENT=$(git branch-name) && git checkout master && git pull -p && git branch -D $CURRENT
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	standup = !git log --all --no-merges --graph --date=relative --committer=$(git config --get user.email) --since=yesterday --pretty=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d'
+	alias = config --get-regexp alias
+	lasttag = describe --abbrev=0
+	commitoflasttag = !git rev-list -n 1 $(git lasttag)
+	rebaselocal = !git rebase -i $(git commitoflasttag)
+[http]
+	sslVerify = false
 [core]
+	editor = vim
 #	filemode = false
 # autocrlf = true
