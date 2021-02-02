@@ -1,0 +1,49 @@
+terminal:
+  searchOptions: {}
+  colorScheme:
+    name: Bright Lights
+    foreground: '#b3c9d7'
+    background: '#191919'
+    cursor: '#f34b00'
+    colors:
+      - '#191919'
+      - '#ff355b'
+      - '#b7e876'
+      - '#ffc251'
+      - '#76d4ff'
+      - '#ba76e7'
+      - '#6cbfb5'
+      - '#c2c8d7'
+      - '#191919'
+      - '#ff355b'
+      - '#b7e876'
+      - '#ffc251'
+      - '#76d5ff'
+      - '#ba76e7'
+      - '#6cbfb5'
+      - '#c2c8d7'
+  font: SauceCodePro Nerd Font
+  fontSize: 12
+  ligatures: true
+  environment: {}
+  profile: user-default
+  alwaysUseWorkingDirectory: true
+  bell: audible
+  rightClick: paste
+  autoOpen: false
+  bracketedPaste: true
+  copyOnSelect: true
+hotkeys:
+  shell: {}
+  profile: {}
+serial: {}
+ssh: {}
+appearance:
+  theme: Standard
+  tabsLocation: left
+  vibrancy: true
+  frame: full
+  dock: 'off'
+enableWelcomeTab: false
+pluginBlacklist: []
+enableAnalytics: false
