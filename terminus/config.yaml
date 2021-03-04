@@ -22,7 +22,7 @@ terminal:
       - '#ba76e7'
       - '#6cbfb5'
       - '#c2c8d7'
-  font: SauceCodePro Nerd Font
+  font: Hack Nerd Font
   fontSize: 12
   ligatures: true
   environment: {}

@@ -35,7 +35,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Vala Syntax highlighting
-Plug 'arrufat/vala.vim' 
+Plug 'arrufat/vala.vim'
 
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'
@@ -98,6 +98,9 @@ Plug 'junegunn/fzf.vim'
 " C#
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'OrangeT/vim-csharp'
+
+" Vimfluence
+Plug 'vim-scripts/confluencewiki.vim'
 
 " Initialize plugin system
 call plug#end()
