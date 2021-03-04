@@ -36,6 +36,10 @@ terminal:
 hotkeys:
   shell: {}
   profile: {}
+  toggle-window:
+    - []
+  delete-previous-word:
+    - - Alt-Backspace
 serial: {}
 ssh: {}
 appearance:
