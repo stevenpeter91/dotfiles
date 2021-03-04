@@ -2,8 +2,10 @@
 	name = Steven Peter
 	email = 526473+gb96@users.noreply.github.com
 [alias]
+	is-git = !git branch-name-for-ps1 "$(git branch-name)"
+	branch-name-for-ps1 = "!f() { [ ! $1 = '' ] && echo \"(${1})\"; }; f"
 	actualize = !git fetch -p origin
-	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
+	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD 2> /dev/null` 2> /dev/null
 	cleanup = !git clean -fdx
 	create = checkout -b
 	createfrom = !sh -c 'git actualize && git checkout -t $1'
@@ -11,10 +13,15 @@
 	finish = !CURRENT=$(git branch-name) && git checkout master && git pull -p && git branch -D $CURRENT
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	standup = !git log --all --no-merges --graph --date=relative --committer=$(git config --get user.email) --since=yesterday --pretty=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d'
+	standup-lastweek = !git log --all --no-merges --graph --date=relative --committer=$(git config --get user.email) --after=@{7.days.ago} --pretty=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d'
 	alias = config --get-regexp alias
 	lasttag = describe --abbrev=0
 	commitoflasttag = !git rev-list -n 1 $(git lasttag)
 	rebaselocal = !git rebase -i $(git commitoflasttag)
+	branches-recursive = "!find . -name .git -type d -execdir echo =================== \\; -execdir pwd \\; -execdir git branch \\; -prune"
+	status-recursive = "!find . -name .git -type d -execdir echo =================== \\; -execdir pwd \\; -execdir git status \\; -prune"
+	log-full = log --cc -t --graph --oneline
+	log-semi = log --graph --compact-summary
 [http]
 	sslVerify = false
 [core]
