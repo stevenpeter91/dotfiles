@@ -48,13 +48,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt COMPLETE_ALIASES
 setopt MENU_COMPLETE
 # make terminal command navigation sane again
-# bindkey '^[^[[D' backward-word
-# bindkey '^[^[[C' forward-word
-# bindkey '^[[5D' beginning-of-line
-# bindkey '^[[5C' end-of-line
-# bindkey '^[[3~' delete-char
-# bindkey '^?' backward-delete-char
-# bindkey "^A" vi-beginning-of-line
+bindkey "\E[1;2H" beginning-of-line
+bindkey "\E[1;2F" end-of-line
+bindkey "\E[1;2C" forward-word
+bindkey "\E[1;2D" backward-word
 
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
