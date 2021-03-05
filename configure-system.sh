@@ -83,7 +83,7 @@ if [ "$(uname)" == "Darwin" ]; then
   defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
   echo "System audio volume"
-  sudo nvram SystemAudioVolume=" "
+  # sudo nvram SystemAudioVolume=" "
 
   defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
@@ -119,7 +119,7 @@ fi;
 rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
 rm -rf ~/.zshenv && ln -s $SRC_DIR/zsh/zshenv ~/.zshenv
 
-mkdir -p ~/.config/yyper/
+mkdir -p ~/.config/hyper/
 rm -rf ~/.config/hyper/.hyper.js && ln -s $SRC_DIR/hyper/hyper.js ~/.config/hyper/.hyper.js
 
 rm -rf ~/.gitconfig && ln -s $SRC_DIR/git/gitconfig ~/.gitconfig

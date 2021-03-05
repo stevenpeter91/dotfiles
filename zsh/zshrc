@@ -27,7 +27,7 @@ prepend_path /usr/local/lib/ruby/gems/2.6.0/bin
 prepend_path /usr/local/opt/ruby/bin
 
 alias vim="nvim"
-alias ls="colorls"
+#alias ls="colorls"
 
 setopt NO_BG_NICE
 setopt NO_HUP

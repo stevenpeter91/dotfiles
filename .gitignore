@@ -1,4 +1,9 @@
+# NVIM
 nvim/spell
 nvim/shada
 nvim/plugged
 nvim/autoload/plug.vim
+
+# terminus
+!terminus/config.yaml
+terminus/*
