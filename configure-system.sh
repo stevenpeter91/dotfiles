@@ -114,6 +114,9 @@ if [ "$(uname)" == "Darwin" ]; then
 
   echo "Start indexing of spotlight"
   sudo mdutil -E /
+
+	echo "Enable locate"
+	sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 fi;
 
 rm -rf ~/.zshrc && ln -s $SRC_DIR/zsh/zshrc ~/.zshrc
