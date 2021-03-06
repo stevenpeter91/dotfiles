@@ -20,6 +20,7 @@ autoload -U compinit && compinit
 
 autoload -U colors && colors
 
+prepend_path /Applications/Visual Studio Code.app/Contents/Resources/app/bin
 prepend_path /usr/local/sbin
 prepend_path $DOTFILES/bin
 prepend_path $HOME/bin

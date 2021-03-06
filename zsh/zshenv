@@ -3,3 +3,4 @@ export TERM="xterm-256color"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 export WIKI_URL='http://confluence.steven-peter-it.de'
+source "$HOME/.cargo/env"
