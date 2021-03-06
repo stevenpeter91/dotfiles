@@ -25,6 +25,7 @@ prepend_path $DOTFILES/bin
 prepend_path $HOME/bin
 prepend_path /usr/local/lib/ruby/gems/2.6.0/bin
 prepend_path /usr/local/opt/ruby/bin
+prepend_path /opt/homebrew/bin
 
 alias vim="nvim"
 #alias ls="colorls"
@@ -48,10 +49,14 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt COMPLETE_ALIASES
 setopt MENU_COMPLETE
 # make terminal command navigation sane again
+#Unicomp
 bindkey "\E[1;2H" beginning-of-line
 bindkey "\E[1;2F" end-of-line
-bindkey "\E[1;2C" forward-word
-bindkey "\E[1;2D" backward-word
+# Mac internal keyboard
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
 
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
