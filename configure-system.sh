@@ -137,6 +137,7 @@ rm -rf ~/.config/bspwm && ln -s $SRC_DIR/bspwm ~/.config/bspwm
 rm -rf ~/.config/sxhkd && ln -s $SRC_DIR/sxhkd ~/.config/sxhkd
 rm -rf ~/.config/polybar && ln -s $SRC_DIR/polybar ~/.config/polybar
 rm -rf ~/.config/terminator && ln -s $SRC_DIR/terminator ~/.config/terminator
+rm -rf ~/.config/kitty && ln -s $SRC_DIR/kitty ~/.config/kitty
 rm -rf ~/.colors && ln -s $SRC_DIR/colors ~/.colors
 
 export TERMINUS_FOLDER=~/.config/terminus

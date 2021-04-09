@@ -50,6 +50,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt COMPLETE_ALIASES
 setopt MENU_COMPLETE
 # make terminal command navigation sane again
+## Terminus
+
 #Unicomp
 bindkey "\E[1;2H" beginning-of-line
 bindkey "\E[1;2F" end-of-line
@@ -58,6 +60,13 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
+
+## Kitty
+# Mac internal
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+bindkey "^[[D" beginning-of-line
+bindkey "^[[C" end-of-line
 
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
