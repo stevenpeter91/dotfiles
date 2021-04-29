@@ -5,15 +5,10 @@ source ~/.config/nvim/plugins.vim
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
 
-nnoremap j k
-nnoremap k j
-
 set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
 set smartindent noexpandtab tabstop=2 shiftwidth=2
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
-
+tnoremap <Esc> <C-\><C-n>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -86,6 +81,9 @@ call denite#custom#var('grep', 'final_opts', [])
 
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
+
+" FZF Shortcuts
+nnoremap <C-p> :GFiles<CR>
 
 " Open file commands
 call denite#custom#map('insert,normal', "<C-t>", '<denite:do_action:tabopen>')

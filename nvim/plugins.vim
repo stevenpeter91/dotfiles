@@ -21,6 +21,12 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " === Editing Plugins === "
+" Hard mode
+Plug 'wikitopian/hardmode'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -92,7 +98,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " FZF
-Plug '/usr/local/opt/fzf'
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 
 " C#
