@@ -27,6 +27,9 @@ Plug 'wikitopian/hardmode'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" auto-close-tag
+Plug 'alvan/vim-closetag'
+
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
